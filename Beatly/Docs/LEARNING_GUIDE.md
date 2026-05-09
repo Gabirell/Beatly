@@ -262,6 +262,117 @@ struct CounterView: View {
 - Mark as `private` - only this view should modify it
 - When state changes, SwiftUI redraws the view
 
+### 8. Timers in Swift
+
+Timers let you run code repeatedly at specific intervals - perfect for animations or updating data.
+
+```swift
+// Create a timer that fires every 2 seconds
+timer = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true) { _ in
+    print("This runs every 2 seconds!")
+}
+
+// Don't forget to stop it when you're done!
+timer?.invalidate()
+```
+
+**Important:** Always invalidate timers when you're done with them to prevent memory leaks!
+
+### 9. String Formatting
+
+Format numbers and text with `String(format:)` for precise control.
+
+```swift
+// Format time as MM:SS
+let minutes = 5
+let seconds = 7
+let formatted = String(format: "%02d:%02d", minutes, seconds)
+// Result: "05:07"
+
+// %02d means: "integer with at least 2 digits, pad with zeros"
+```
+
+### 10. Switch Statements with Ranges
+
+Use ranges in switch statements for elegant conditional logic.
+
+```swift
+var heartColor: Color {
+    switch currentBPM {
+        case 0..<60: return .blue        // 0 to 59
+        case 60..<100: return .green     // 60 to 99
+        case 100..<140: return .orange   // 100 to 139
+        default: return .red             // 140 and above
+    }
+}
+```
+
+**Syntax:**
+- `0..<60` = Range from 0 up to (but not including) 60
+- `0...60` = Range from 0 up to and including 60
+
+---
+
+## What We Built in Phase 1B
+
+### Features Added to HomeView:
+
+1. **Pulsing Heart Animation** 💓
+   - Heart scales up and down smoothly
+   - Outer glow ring for depth
+   - Animation speed syncs with BPM (faster heart = faster pulse)
+
+2. **Dynamic Color System** 🎨
+   - Blue: Very low/resting (<60 BPM)
+   - Green: Normal resting (60-100 BPM)
+   - Orange: Moderate cardio (100-140 BPM)
+   - Red: Intense exercise (140-170 BPM)
+   - Purple: Maximum effort (170+ BPM)
+
+3. **Interactive Demo Simulation** 🎮
+   - "Start Demo" button to test the app
+   - Heart rate changes randomly (simulating exercise)
+   - Calories and duration update in real-time
+   - Heart color changes based on intensity
+
+4. **Smooth Animations** ✨
+   - Pulse animation syncs with actual BPM
+   - Color transitions are smooth and gradual
+   - Numbers count up smoothly with `.contentTransition(.numericText())`
+
+### Key Code Patterns Used:
+
+**@State for Reactive UI:**
+```swift
+@State private var currentBPM = 72  // When this changes, UI updates!
+```
+
+**Computed Properties for Logic:**
+```swift
+var heartColor: Color {
+    switch currentBPM {
+        case 60..<100: return .green
+        // Automatically recalculates when currentBPM changes
+    }
+}
+```
+
+**Animations:**
+```swift
+.animation(
+    .easeInOut(duration: pulseSpeed)
+    .repeatForever(autoreverses: true),
+    value: isPulsing
+)
+```
+
+**Timers:**
+```swift
+timer = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true) { _ in
+    // Update data every 2 seconds
+}
+```
+
 ---
 
 ## Current File Structure
@@ -314,16 +425,18 @@ Here's your development roadmap:
 - [x] Build placeholder screens
 - [x] Set up project structure
 
-### 🔄 Phase 1B: Visual Polish (NEXT)
-- [ ] Add pulsing heart animation to HomeView
-- [ ] Improve UI with colors and styling
-- [ ] Add app icon and assets
+### ✅ Phase 1B: Visual Polish (COMPLETE!)
+- [x] Add pulsing heart animation to HomeView
+- [x] Improve UI with colors and styling
+- [x] Add heart rate zones with color coding
+- [x] Add interactive demo simulation
+- [x] Add dynamic stats display
 
 ### 📋 Phase 2: Data Models
 - [ ] Create models for: Playlist, Song, Workout, User
 - [ ] Set up sample data for testing
 
-### ❤️ Phase 3: HealthKit Integration
+### 🔄 Phase 3: HealthKit Integration (NEXT)
 - [ ] Request health permissions
 - [ ] Read real-time heart rate
 - [ ] Display BPM on HomeView

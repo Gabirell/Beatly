@@ -10,6 +10,8 @@ import SwiftUI
 /// MainTabView is the main navigation hub of the app
 /// It uses a TabView to let users switch between different sections
 struct MainTabView: View {
+    @Environment(ThemeManager.self) private var themeManager
+    
     var body: some View {
         TabView {
             // Home Tab - The main screen with the pulsing heart
@@ -36,9 +38,20 @@ struct MainTabView: View {
                     Label("Profile", systemImage: "person.fill")
                 }
         }
+        .tint(themeManager.currentTheme.accentColor)
     }
 }
 
 #Preview {
     MainTabView()
+        .environment(SpotifyManager())
+        .environment(HealthKitManager())
+        .environment(LocationManager())
+        .environment(MusicKitManager())
+        .environment(StravaManager())
+        .environment(PlaybackManager())
+        .environment(WorkoutPlaylistManager())
+        .environment(YouTubeMusicManager())
+        .environment(DeezerManager())
+        .environment(ThemeManager())
 }

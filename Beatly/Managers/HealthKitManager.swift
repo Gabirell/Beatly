@@ -37,10 +37,11 @@ class HealthKitManager {
     /// The types of health data we want to READ
     private let typesToRead: Set<HKObjectType> = {
         guard let heartRateType = HKObjectType.quantityType(forIdentifier: .heartRate),
-              let activeEnergyType = HKObjectType.quantityType(forIdentifier: .activeEnergyBurned),
-              let workoutType = HKObjectType.workoutType() else {
+              let activeEnergyType = HKObjectType.quantityType(forIdentifier: .activeEnergyBurned) else {
             return []
         }
+        
+        let workoutType = HKObjectType.workoutType()
         
         return [heartRateType, activeEnergyType, workoutType]
     }()

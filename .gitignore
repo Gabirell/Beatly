@@ -1,0 +1,13 @@
+# Secrets — contains API keys, never commit
+**/Secrets.swift
+
+# Xcode user data
+xcuserdata/
+*.xcuserdatad/
+
+# Build output
+DerivedData/
+build/
+
+# macOS
+.DS_Store

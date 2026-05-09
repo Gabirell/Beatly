@@ -7,18 +7,24 @@
 
 import SwiftUI
 
+/// ContentView is the entry point of the app
+/// It displays the main tab navigation
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+        MainTabView()
     }
 }
 
 #Preview {
     ContentView()
+        .environment(SpotifyManager())
+        .environment(HealthKitManager())
+        .environment(LocationManager())
+        .environment(MusicKitManager())
+        .environment(StravaManager())
+        .environment(PlaybackManager())
+        .environment(WorkoutPlaylistManager())
+        .environment(YouTubeMusicManager())
+        .environment(DeezerManager())
+        .environment(ThemeManager())
 }

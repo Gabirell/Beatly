@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>com.beatly.app</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>beatly</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>com.googleusercontent.apps.1001480626900-83u02kf1s71dqiid81cl3090t8jur313</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.1001480626900-83u02kf1s71dqiid81cl3090t8jur313</string>
+			</array>
+		</dict>
+	</array>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>spotify</string>
+		<string>spotify-action</string>
+		<string>strava</string>
+		<string>youtube</string>
+		<string>youtube-music</string>
+		<string>deezer</string>
+	</array>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>Beatly uses Apple Music to match songs to your workout intensity.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Beatly uses your location to track outdoor workouts.</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>audio</string>
+	</array>
+</dict>
+</plist>
