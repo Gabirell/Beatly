@@ -118,8 +118,8 @@ A thin wrapper that simply displays `MainTabView()`. Exists as the default Xcode
 This is the largest and most important manager. It handles all Spotify integration.
 
 **Credentials:**
-- Client ID: `3e667d245f874478ab36c4070f7b40be`
-- Client Secret: `ea55c05fe75d4fc4b4f1aacbc8ce9b44`
+- Client ID: *(see Secrets.swift)*
+- Client Secret: *(see Secrets.swift)*
 - Redirect URI: `beatly://callback`
 
 **Key Properties:**
@@ -303,8 +303,8 @@ Handles Apple Music permission via the MusicKit framework.
 OAuth2 integration with Strava for workout data.
 
 **Credentials:**
-- Client ID: `233517`
-- Client Secret: `d6db920b88cc9205863b760edaac358e63022ef4`
+- Client ID: *(see Secrets.swift)*
+- Client Secret: *(see Secrets.swift)*
 - Redirect URI: `beatly://strava-callback`
 - Strava Callback Domain setting: `strava-callback`
 

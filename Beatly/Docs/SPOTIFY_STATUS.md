@@ -19,8 +19,8 @@
 - `/tracks` renamed to `/items` for playlist endpoints
 
 ## Credentials
-- Client ID: `3e667d245f874478ab36c4070f7b40be`
-- Client Secret: `ea55c05fe75d4fc4b4f1aacbc8ce9b44`
+- Client ID: *(see Secrets.swift)*
+- Client Secret: *(see Secrets.swift)*
 - Redirect URI: `beatly://callback`
 - Owner email: gabriel.netto@gmail.com
 - Test user: Gabriel Netto (gabriel.netto@gmail.com)
